@@ -80,6 +80,7 @@ namespace SpeedTest
                     int speedCounter = 0;
                     bool flag = true;
                     bool speedFlag = true;
+                    string time2_string ="";
 
                     switch (Settings.Default.TimeScale)
                     {
@@ -116,26 +117,34 @@ namespace SpeedTest
                             {
                                 case 0: // 10 Minutes
                                     time2 = DateTime.Now.Subtract(new TimeSpan(0, 0, time, 0));
+                                    time2_string = time2.ToString("HH:mm");
                                     break;
                                 case 1: // 30 Minutes
                                     time2 = DateTime.Now.Subtract(new TimeSpan(0, 0, time, 0));
+                                    time2_string = time2.ToString("HH:mm");
                                     break;
                                 case 2: // 1 Hour
                                     time2 = DateTime.Now.Subtract(new TimeSpan(0, 0, time, 0));
+                                    time2_string = time2.ToString("HH:mm");
                                     break;
                                 case 3: // 12 Hours
                                     time2 = DateTime.Now.Subtract(new TimeSpan(0, time, 0, 0));
+                                    time2_string = time2.ToString("HH:mm");
                                     break;
                                 case 4: // 24 Hours
                                     time2 = DateTime.Now.Subtract(new TimeSpan(0, time, 0, 0));
+                                    time2_string = time2.ToString("HH:mm");
                                     break;
                                 case 5: // 7 Days
-                                    time2 = DateTime.Now.Subtract(new TimeSpan(0, time, 0, 0));
+                                    time2 = DateTime.Now.Subtract(new TimeSpan(time, 0, 0, 0));
+                                    time2_string = time2.ToString("dd/MM");
                                     break;
                             }
 
-                            if (time.ToString().Length > 1) e.Graphics.DrawString(time2.ToString("HH:mm"), Font, b, f - 16, Height - 56);
-                            else e.Graphics.DrawString(time2.ToString("HH:mm"), Font, b, f - 13, Height - 56);
+                            if (time.ToString().Length > 1)
+                                e.Graphics.DrawString(time2_string, Font, b, f - 16, Height - 56);
+                            else
+                                e.Graphics.DrawString(time2_string, Font, b, f - 13, Height - 56);
                         }
                         time += 1;
 
