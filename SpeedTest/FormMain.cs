@@ -148,7 +148,7 @@ namespace SpeedTest
         {
             if (m.Msg == 0x0112) // WM_SYSCOMMAND
             {
-                if (m.WParam.ToInt32() == 0xf020) // SC_MINIMIZE
+                if (m.WParam.ToInt32() == 0xf020 || m.WParam.ToInt32() == 0xf060) // SC_MINIMIZE || SC_CLOSE
                 {
                     if (Settings.Default.Minimize)
                     {
