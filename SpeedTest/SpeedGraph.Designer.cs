@@ -42,7 +42,8 @@
             "30 Minutes",
             "1 Hour",
             "12 Hours",
-            "24 Hours"});
+            "24 Hours",
+            "7 Days"});
             this.ComboTimeScale.Location = new System.Drawing.Point(30, 116);
             this.ComboTimeScale.Name = "ComboTimeScale";
             this.ComboTimeScale.Size = new System.Drawing.Size(107, 21);

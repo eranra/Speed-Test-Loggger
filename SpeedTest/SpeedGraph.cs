@@ -98,6 +98,9 @@ namespace SpeedTest
                         case 4: // 24 Hours
                             totalTime = 24;
                             break;
+                        case 5: // 7 days
+                            totalTime = 7;
+                            break;
                     }
 
                     // Draw the Timeline
@@ -124,6 +127,9 @@ namespace SpeedTest
                                     time2 = DateTime.Now.Subtract(new TimeSpan(0, time, 0, 0));
                                     break;
                                 case 4: // 24 Hours
+                                    time2 = DateTime.Now.Subtract(new TimeSpan(0, time, 0, 0));
+                                    break;
+                                case 5: // 7 Days
                                     time2 = DateTime.Now.Subtract(new TimeSpan(0, time, 0, 0));
                                     break;
                             }
@@ -330,6 +336,9 @@ namespace SpeedTest
                                     break;
                                 case 4: // 24 Hours
                                     elapsedTime = Global.ToUnixTime(DateTime.Now.Subtract(new TimeSpan(0, 24, 0, 0)));
+                                    break;
+                                case 5: // 7 Days
+                                    elapsedTime = Global.ToUnixTime(DateTime.Now.Subtract(new TimeSpan(7, 0, 0, 0)));
                                     break;
                             }
 
